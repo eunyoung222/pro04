@@ -123,7 +123,7 @@
 
 
         #tb1 { width:980px; margin:40px auto; }
-        #tb1 th { background-color: #00A2FF; color:#fff; }
+        #tb1 th { background-color: #00A2FF; color:#fff;  font-size: 20px;}
         .item1 { width:10%; }
         .item2 { width:70%; }
         .item3 { width:10%; }
@@ -164,7 +164,7 @@
     <h3 class="contents">일정 및 행사 안내, 이벤트 발표, 채널 등 해법의 커뮤니티 게시판입니다.</h3>
     <br>
     <form action="${path1 }/notice/list.do" method="get" class="field has-addons has-addons-right"
-          style="margin-right: 193px;">
+          style="margin-right: 503px;">
         <p class="control">
                 <span class="select">
                     <select id="type" name="type">

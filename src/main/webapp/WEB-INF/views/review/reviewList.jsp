@@ -134,11 +134,11 @@
 
 
         #tb1 { width:980px; margin:40px auto; }
-        #tb1 th { background-color: #00A2FF; color:#fff; }
+        #tb1 th { background-color: #00A2FF; color:#fff; font-size: 20px;}
         .item1 { width:10%; }
         .item2 { width:65%; }
         .item3 { width:10%; }
-        .item4 { width:10%; }
+        .item4 { width:30%; }
         #page-nation1 { width: 960px; margin:20px auto; }
 
     </style>
@@ -151,7 +151,7 @@
     <h3 class="contents">해법의 장점과 특히 만족과 함께 성적 향상을 경험한 학생들의 솔직한 수업만족도 체험수기입니다.</h3>
     <br>
     <form action="${path1 }/review/list.do" method="get" class="field has-addons has-addons-right"
-          style="margin-right: 193px;">
+          style="margin-right: 503px;">
         <p class="control">
                 <span class="select">
                     <select id="type" name="type">

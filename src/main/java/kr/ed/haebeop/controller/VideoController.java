@@ -139,10 +139,27 @@ public class VideoController {
             Video domain = new Video();
             domain.setNo(no);
             domain.setTitle(request.getParameter("title"));
-            domain.setImg(request.getParameter("image"));
             domain.setContent(request.getParameter("content"));
-            domain.setVideofile(request.getParameter("videofile"));
             domain.setTeacher(request.getParameter("teacher"));
+
+            // 파일 업로드
+            String realPath = request.getSession().getServletContext().getRealPath("/resources/video/");           // 업로드 경로 설정
+            String saveFolder = realPath;
+            File folder = new File(saveFolder);
+            if(!folder.exists()) {          // 폴더가 존재하지 않으면 폴더 생성
+                folder.mkdirs();
+            }
+
+
+            // 파일 업로드
+            realPath = request.getSession().getServletContext().getRealPath("/resources/img/");           // 업로드 경로 설정
+            saveFolder = realPath;
+            File folder2 = new File(saveFolder);
+            if(!folder2.exists()) {          // 폴더가 존재하지 않으면 폴더 생성
+                folder2.mkdirs();
+            }
+
+
             videoService.videoEdit(domain);
             return "redirect:list.do";
         }
