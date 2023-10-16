@@ -26,11 +26,6 @@ public class VideoServiceImpl implements VideoService {
 
     @Override
     public void videoInsert(Video domain) throws Exception {
-        // 이미지 받아서 저장하는 로직 (resources/img)
-        String uploadPath = "/webapp/resources/img/";
-        // 비디오 받아서 저장 (video 폴더)
-
-        // db에는 파일이름만 저장
 
         videoMapper.videoInsert(domain);
     }

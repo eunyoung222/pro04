@@ -70,7 +70,7 @@
             <h2 class="h2">시범 강의 올리기</h2>
             <hr>
             <div class="container">
-                <form action="${path1 }/video/insert.do" method="post">
+                <form action="${path1 }/video/insert.do" method="post" enctype="multipart/form-data">
                     <table id="table1">
                         <tbody>
                         <tr>
@@ -82,7 +82,7 @@
                         <tr>
                             <th style="background-color:#dcdcdc">List <br> 이미지</th>
                             <td>
-                                <input type="file" name="image" id="img" class="input" placeholder="이미지" required>
+                                <input type="file" name="img" id="img" class="input" placeholder="이미지" required>
                             </td>
                         </tr>
                         <tr>
@@ -104,7 +104,7 @@
                         <tr>
                             <th style="background-color:#dcdcdc">선생님</th>
                             <td>
-                                <input type="text" name="title" id="teacher" class="input" placeholder="선생님 입력" maxlength="98" required>
+                                <input type="text" name="teacher" id="teacher" class="input" placeholder="선생님 입력" maxlength="98" required>
                             </td>
                         </tr>
 

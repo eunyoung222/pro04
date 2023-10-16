@@ -137,7 +137,7 @@
 
             <c:if test= "${sid.equals('admin')}">
             <div class="button-group">
-                <a class="button" href="${path1 }/video/list.do">목록으로</a>
+<%--                <a class="button" href="${path1 }/video/list.do">목록으로</a>--%>
                 <a class="button3" href="${path1 }/video/delete.do?no=${domain.no}">삭제</a>
                 <a class="button3" href="${path1 }/video/edit.do?no=${domain.no}">수정</a>
             </div>

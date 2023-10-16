@@ -66,16 +66,57 @@ public class VideoController {
         }
 
         @PostMapping("insert.do")
-        public String videoInsert(HttpServletRequest request, Model model) throws Exception {
+        public String videoInsert(HttpServletRequest request, Model model, @RequestParam(value = "videofile", required = false) MultipartFile file, @RequestParam(value = "img", required = false) MultipartFile img) throws Exception {
+
             Video domain = new Video();
             domain.setTitle(request.getParameter("title"));
-            domain.setImg(request.getParameter("image"));
             domain.setContent(request.getParameter("content"));
-            domain.setVideofile(request.getParameter("videofile"));
             domain.setTeacher(request.getParameter("teacher"));
+
+            // 파일 업로드
+            String realPath = request.getSession().getServletContext().getRealPath("/resources/video/");           // 업로드 경로 설정
+            String saveFolder = realPath;
+            File folder = new File(saveFolder);
+            if(!folder.exists()) {          // 폴더가 존재하지 않으면 폴더 생성
+                folder.mkdirs();
+            }
+
+                // 첨부파일이 있는 경우
+                if (file != null) {
+                    String originalFileName = file.getOriginalFilename();   // 첨부파일의 실제 파일명
+                    if(!originalFileName.isEmpty()) {
+                        String saveFileName = UUID.randomUUID().toString() + originalFileName.substring(originalFileName.lastIndexOf("."));     // 파일 이름을 랜덤으로 설정
+                        domain.setVideofile(saveFileName);                       // 동영상 정보 저장
+                        file.transferTo(new File(folder, saveFileName));    // 파일을 업로드 폴더에 저장
+                    }
+                }
+
+
+            // 파일 업로드
+            realPath = request.getSession().getServletContext().getRealPath("/resources/img/");           // 업로드 경로 설정
+            saveFolder = realPath;
+            File folder2 = new File(saveFolder);
+            if(!folder2.exists()) {          // 폴더가 존재하지 않으면 폴더 생성
+                folder2.mkdirs();
+            }
+
+            // 첨부파일이 있는 경우
+            if (img != null) {
+                String originalFileName = img.getOriginalFilename();   // 첨부파일의 실제 파일명
+                if(!originalFileName.isEmpty()) {
+                    String saveFileName = UUID.randomUUID().toString() + originalFileName.substring(originalFileName.lastIndexOf("."));     // 파일 이름을 랜덤으로 설정
+                    domain.setImg(saveFileName);                       // 동영상 정보 저장
+                    img.transferTo(new File(folder2, saveFileName));    // 파일을 업로드 폴더에 저장
+                }
+            }
+
             videoService.videoInsert(domain);
             return "redirect:list.do";
+
+
         }
+
+
 
         @GetMapping("delete.do")
         public String videoDelete(HttpServletRequest request, Model model) throws Exception {
