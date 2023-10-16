@@ -61,7 +61,7 @@
     </update>
 
     <!-- visit 증가 -->
-    <update id="countUp">
+    <update id="visitCount">
         update review set visit = visit+1 where no=#{no}
     </update>
 

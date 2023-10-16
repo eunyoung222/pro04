@@ -3,6 +3,7 @@ package kr.ed.haebeop.service;
 import kr.ed.haebeop.domain.Notice;
 import kr.ed.haebeop.persistence.NoticeMapper;
 import kr.ed.haebeop.util.Page;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,9 @@ public class NoticeServiceImpl implements NoticeService {
     @Autowired
     private NoticeMapper noticeMapper;
 
+    @Autowired
+    private SqlSession sqlSession;
+
     @Override
     public List<Notice> noticeList(Page page) throws Exception {
         return noticeMapper.noticeList(page);
@@ -21,6 +25,7 @@ public class NoticeServiceImpl implements NoticeService {
 
     @Override
     public Notice noticeDetail(int no) throws Exception {
+        noticeMapper.visitCount(no);
         return noticeMapper.noticeDetail(no);
     }
 

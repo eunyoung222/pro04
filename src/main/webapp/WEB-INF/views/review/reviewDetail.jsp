@@ -82,6 +82,10 @@
             <td class="p" style="text-align: center;"><p>${domain.content }</p></td>
           </tr>
           <tr>
+            <th style="text-align: center; background-color:#dcdcdc">아이디</th>
+            <td class="p" style="text-align: center;"><p>${domain.id }</p></td>
+          </tr>
+          <tr>
             <th style="text-align: center; background-color:#dcdcdc">작성일</th>
             <td style="text-align: center;">${domain.resdate }</td>
           </tr>
@@ -92,11 +96,11 @@
           </tbody>
         </table>
 
-        <div class="btn-group" style="float: right">
-          <a href="${path1 }/review/list.do" class="button">목록으로</a>
-          <br>
-          <br>
-        </div>
+<%--        <div class="btn-group" style="float: right">--%>
+<%--          <a href="${path1 }/review/list.do" class="button">목록으로</a>--%>
+<%--          <br>--%>
+<%--          <br>--%>
+<%--        </div>--%>
 
 
 
@@ -112,25 +116,25 @@
           <c:when test="${not empty sid && (sid eq 'admin' || sid eq domain.id)}">
             <div class="column is-3"></div>
             <div class="column is-2">
-              <a class="button" style="background-color: #2B3A55; color: #fff;" href="${path1 }/review/list.do">글 목록</a>
+              <a class="button" style="left: 1090px" href="${path1 }/review/list.do">목록으로</a>
             </div>
             <div class="column is-2">
-              <a class="button3" href="${path1 }/review/edit.do?no=${domain.bno}">글 수정</a>
+              <a class="button3" style="float: right" href="${path1 }/review/edit.do?no=${domain.no}">수정</a>
             </div>
             <div class="column is-2">
-              <a class="button3" href="${path1 }/review/delete.do?no=${domain.bno}">글 삭제</a>
+              <a class="button3" style="float: right" href="${path1 }/review/delete.do?no=${domain.no}">삭제</a>
             </div>
             <div class="column is-3"></div>
           </c:when>
+
+          <c:otherwise>
+            <div class="column is-5"></div>
+            <div class="column is-2">
+              <a class="button" style="left: 1090px" href="${path1 }/review/list.do">목록으로</a>
+            </div>
+            <div class="column is-5"></div>
+          </c:otherwise>
         </c:choose>
-<%--          <c:otherwise>--%>
-<%--            <div class="column is-5"></div>--%>
-<%--            <div class="column is-2">--%>
-<%--              <a class="button is-fullwidth is-info" href="${path1 }/review/list.do">글 목록</a>--%>
-<%--            </div>--%>
-<%--            <div class="column is-5"></div>--%>
-<%--          </c:otherwise>--%>
-<%--        </c:choose>--%>
 
       </div>
     </div>

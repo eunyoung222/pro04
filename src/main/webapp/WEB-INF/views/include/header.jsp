@@ -15,13 +15,13 @@
             <%--<a href="https://www.facebook.com/themefisher" target="_blank"><i class="icofont-facebook"></i></a>
             <a href="https://github.com/themefisher/" target="_blank"><i class="icofont-github"></i></a>
             <a href="#" target="_blank"><i class="icofont-linkedin"></i></a>--%>
-            <a href="#">
+            <a href="${path0}/user/loginForm">
               <i class="icofont-login has-text-white"> 로그인</i>
             </a>
-            <a href="#">
+            <a href="${path0}/user/join">
               <i class="icofont-user has-text-white"> 회원가입</i>
             </a>
-            <a href="#">
+            <a href="${path0}/contact">
               <i class="icofont-google-map has-text-white"> 오시는길</i>
             </a>
             <%--<a href="donation.html" class="top-btn">Donate Now</a>--%>

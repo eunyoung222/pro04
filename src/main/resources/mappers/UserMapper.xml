@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="kr.ed.haebeop.persistence.UserMapper">
+    <select id="userList" resultType="kr.ed.haebeop.domain.User">
+        select * from user
+    </select>
+    <select id="userCount" resultType="integer">
+        select count(*) from user
+    </select>
+    <select id="getUser" resultType="kr.ed.haebeop.domain.User">
+        select * from user where id=#{id }
+    </select>
+    <!--컨트롤러-->
+    <select id="signIn" resultType="kr.ed.haebeop.domain.User">
+        select * from user where id=#{id }
+    </select>
+    <!--DAO-->
+    <select id="loginCheck" resultType="kr.ed.haebeop.domain.User">
+        select id, pw, name from user where id=#{id }
+    </select>
+    <!--Ajax-->
+    <select id="logIn" resultType="kr.ed.haebeop.domain.User">
+        select id, pw, name from user where id=#{id }
+    </select>
+    <insert id="userInsert">
+        insert into user values(#{id }, #{pw }, #{name }, #{email }, #{tel }, #{addr1 }, #{addr2}, #{postcode }, default, #{birth }, #{pt }, #{visited })
+    </insert>
+    <update id="userUpdate">
+        update user set pw=#{pw }, name=#{name }, email=#{email }, tel=#{tel }, addr1=#{addr1 }, addr2=#{addr2 }, postcode=#{postcode }
+    </update>
+    <delete id="userDelete">
+        delete from user where id=#{id }
+    </delete>
+
+</mapper>

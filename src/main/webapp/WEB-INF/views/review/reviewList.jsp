@@ -133,11 +133,12 @@
 
 
 
-        #tb1 { width:960px; margin:40px auto; }
+        #tb1 { width:980px; margin:40px auto; }
         #tb1 th { background-color: #00A2FF; color:#fff; }
         .item1 { width:10%; }
-        .item2 { width:70%; }
+        .item2 { width:65%; }
         .item3 { width:10%; }
+        .item4 { width:10%; }
         #page-nation1 { width: 960px; margin:20px auto; }
 
     </style>
@@ -174,7 +175,8 @@
                 <tr>
                     <th class="item1">번호</th>
                     <th class="item2">제목</th>
-                    <th class="item3">등록일</th>
+                    <th class="item3">아이디</th>
+                    <th class="item4">등록일</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -184,7 +186,8 @@
                         <td class="item2">
                             <a href="${path1 }/review/detail.do?no=${review.no }" class="al">${review.title }</a>
                         </td>
-                        <td class="item3">${review.resdate }</td>
+                        <td class="item3">${review.id }</td>
+                        <td class="item4">${review.resdate }</td>
                     </tr>
                 </c:forEach>
                 </tbody>

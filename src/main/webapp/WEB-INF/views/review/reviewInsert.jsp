@@ -10,14 +10,33 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>글 쓰기</title>
+    <title>후기 남기기</title>
     <!-- 헤드 부분 인클루드 -->
     <jsp:include page="../include/head.jsp"></jsp:include>
     <script src="https://cdn.ckeditor.com/4.20.0/standard/ckeditor.js"></script>
     <script type="text/javascript" src="${path1 }/resources/ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
 </head>
 <style>
+
+    @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+
+    *{
+        font-family: 'Nanum Gothic Coding', monospace;
+    }
+
+
+    .h2{
+        font-family: 'Nanum Gothic Coding', monospace;
+        font-weight: 400;
+        line-height: 110px;
+        text-align: center;
+        font-size: 1.75em;
+        margin-bottom: 0.5714em;
+    }
+
     .button {
         text-decoration: none;
         border-radius: 20px;
@@ -55,7 +74,7 @@
 <div class="container is-fullhd">
     <div class="content" id="contents">
         <div class="row column1 text-center">
-            <h2 class="h1">글 쓰기</h2>
+            <h2 class="h2">후기 남기기</h2>
             <hr>
             <div class="container">
                 <form action="${path1 }/review/insert.do" method="post">

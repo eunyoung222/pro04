@@ -122,7 +122,7 @@
 
 
 
-        #tb1 { width:960px; margin:40px auto; }
+        #tb1 { width:980px; margin:40px auto; }
         #tb1 th { background-color: #00A2FF; color:#fff; }
         .item1 { width:10%; }
         .item2 { width:70%; }

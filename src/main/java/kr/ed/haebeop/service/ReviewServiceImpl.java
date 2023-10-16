@@ -3,6 +3,7 @@ package kr.ed.haebeop.service;
 import kr.ed.haebeop.domain.Review;
 import kr.ed.haebeop.persistence.ReviewMapper;
 import kr.ed.haebeop.util.Page;
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,7 @@ public class ReviewServiceImpl implements ReviewService {
     @Autowired
     private ReviewMapper reviewMapper;
 
+
     @Override
     public List<Review> reviewList(Page page) throws Exception {
         return reviewMapper.reviewList(page);
@@ -21,6 +23,7 @@ public class ReviewServiceImpl implements ReviewService {
 
     @Override
     public Review reviewDetail(int no) throws Exception {
+        reviewMapper.visitCount(no);
         return reviewMapper.reviewDetail(no);
     }
 

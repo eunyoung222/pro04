@@ -73,7 +73,7 @@
 <div class="container is-fullhd">
   <div class="content" id="contents">
     <div class="row column1 text-center" style="margin-bottom: 80px;">
-      <h2 class="h2" style="font-weight: 400;">${domain.title}</h2>
+      <h2 class="h2">${domain.title}</h2>
       <hr>
       <div class="container">
         <table id="table1">

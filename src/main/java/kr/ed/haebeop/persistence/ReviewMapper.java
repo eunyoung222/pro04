@@ -10,6 +10,7 @@ import java.util.List;
 public interface ReviewMapper {
     public List<Review> reviewList(Page page) throws Exception;
     public Review reviewDetail(int no) throws Exception;
+    public void visitCount(int no) throws Exception;
     public void reviewInsert(Review domain) throws Exception;
     public void reviewDelete(int no) throws Exception;
     public void reviewEdit(Review domain) throws Exception;
