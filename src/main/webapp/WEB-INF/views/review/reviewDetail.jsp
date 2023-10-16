@@ -96,6 +96,61 @@
           </tbody>
         </table>
 
+        <div class="cmtwrap">
+          <c:if test="${!empty sid}">
+            <form action="${path1 }/comment/insert.do" method="post" class="columns mt-5">
+              <div class="column is-10">
+                <textarea class="textarea" name="content" id="content" placeholder="댓글을 입력해주세요!" rows="2" cols="30" maxlength="800" required style="left: 130px;margin-bottom: 50px;"></textarea>
+                <input type="hidden" name="author" id="author" value="${sid }">
+                <input type="hidden" name="par" id="par" value="${domain.no }">
+              </div>
+              <div class="column is-2">
+                <button type="submit" class="button">등록</button>
+              </div>
+            </form>
+          </c:if>
+          <c:if test="${empty sid}">
+            <div class="column is-10">
+              <div class="commentnull"
+                   style="margin-left: 335px;
+                                 font-weight: 500;
+                                 margin-bottom: 20px;
+                                 font-size: 25px;">
+                「 댓글을 작성하시려면 로그인을 해주세요 ! 」
+              </div>
+            </div>
+          </c:if>
+        </div>
+
+        <c:forEach items="${commentList }" var="comment" varStatus="status">
+          <article class="media">
+            <figure class="media-left">
+              <div class="image is-64x64" style="border-radius: 50%; background-color: #2B3A55; color: #FFFFFF; ">
+                <p style=" color: #FFFFFF; text-align: center; padding: 20px 0px;">
+                    ${comment.author }
+                </p>
+              </div>
+            </figure>
+
+            <div class="media-content">
+              <div class="content">
+                <p style="line-height: 1.3;">
+                  <strong>${comment.author }</strong>
+                  <small> ${comment.regdate }</small>
+                  <br>
+                <p style="color: black; font-size: 20px; line-height: 1.3;" >${comment.content }</p>
+              </div>
+            </div>
+            <c:if test='${sid eq comment.author }'>
+              <div class="media-right">
+                <a class="delete" style="background-color: #2B3A55"
+                   href="${path1 }/comment/delete.do?dno=${comment.dno}&no=${domain.no}">x</a>
+              </div>
+            </c:if>
+          </article>
+        </c:forEach>
+        <br>
+
 <%--        <div class="btn-group" style="float: right">--%>
 <%--          <a href="${path1 }/review/list.do" class="button">목록으로</a>--%>
 <%--          <br>--%>
