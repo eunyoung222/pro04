@@ -263,11 +263,11 @@
             </c:forEach>
         </div>
 
-<%--        <c:if test= "${sid.equals('admin')}">--%>
+        <c:if test= "${sid.equals('admin')}">
             <div class="button-group">
                 <a class="button2" href="${path1 }/video/insert.do">영상 올리기</a>
             </div>
-<%--        </c:if>--%>
+        </c:if>
 
     </div>
     <br>

@@ -232,7 +232,7 @@
 </div>
 <script>
     function checkLogin() {
-        var confirmLogin = confirm("글 작성은 로그인이 필요해요! 로그인하시겠어요?");
+        var confirmLogin = confirm("후기 작성은 로그인이 필요해요! 로그인하시겠어요?");
         if (confirmLogin) {
             location.href = '${path1 }/user/loginForm';
         }
