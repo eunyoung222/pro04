@@ -65,7 +65,7 @@ public class ReviewController {
         int no = Integer.parseInt(request.getParameter("no"));
         Review domain = reviewService.reviewDetail(no);
 
-        // 댓글
+        // 댓글 불러오기
         List<Comment> comment = commentService.commentList(no);
         model.addAttribute("domain", domain);
         model.addAttribute("commentList", comment);

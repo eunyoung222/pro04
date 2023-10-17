@@ -99,7 +99,7 @@
         <div class="cmtwrap">
           <c:if test="${!empty sid}">
             <form action="${path1 }/comment/insert.do" method="post" class="columns mt-5">
-              <div class="column is-10">
+              <div class="column is-10" style="margin-left: 60px;">
                 <textarea class="textarea" name="content" id="content" placeholder="댓글을 입력해주세요!" rows="2" cols="30" maxlength="800" required style="left: 130px;margin-bottom: 50px;"></textarea>
                 <input type="hidden" name="author" id="author" value="${sid }">
                 <input type="hidden" name="par" id="par" value="${domain.no }">

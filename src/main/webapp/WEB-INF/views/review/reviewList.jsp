@@ -151,7 +151,7 @@
     <h3 class="contents">해법의 장점과 특히 만족과 함께 성적 향상을 경험한 학생들의 솔직한 수업만족도 체험수기입니다.</h3>
     <br>
     <form action="${path1 }/review/list.do" method="get" class="field has-addons has-addons-right"
-          style="margin-right: 503px;">
+          style="margin-right: 315px;">
         <p class="control">
                 <span class="select">
                     <select id="type" name="type">
